@@ -8,6 +8,7 @@ plugins {
     id 'com.google.devtools.ksp' version "2.2.10-2.0.2" apply false
     id 'androidx.navigation.safeargs.kotlin' version '2.9.5' apply false
     id 'org.jetbrains.kotlin.jvm' version '2.2.20' apply false
+    id 'dev.detekt' version '2.0.0-alpha.0' apply false
 }
 
 tasks.register('clean', Delete) {
