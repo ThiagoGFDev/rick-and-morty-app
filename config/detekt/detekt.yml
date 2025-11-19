@@ -3,7 +3,7 @@ config:
   warningsAsErrors: false
   checkExhaustiveness: false
   # when writing own rules with new properties, exclude the property path e.g.: ['my_rule_set', '.*>.*>[my_property]']
-  excludes: []
+  excludes: ""
 
 processors:
   active: true
@@ -31,14 +31,6 @@ console-reports:
      - 'IssuesReport'
      - 'FileBasedIssuesReport'
   #  - 'LiteIssuesReport'
-
-output-reports:
-  active: true
-  exclude:
-  # - 'XmlOutputReport'
-  # - 'HtmlOutputReport'
-  # - 'MdOutputReport'
-  # - 'sarif'
 
 comments:
   active: true
@@ -378,7 +370,7 @@ naming:
     aliases: ['ObjectPropertyName']
     constantPattern: '[A-Za-z][_A-Za-z0-9]*'
     propertyPattern: '[A-Za-z][_A-Za-z0-9]*'
-    privatePropertyPattern: '(_)?[A-Za-z][_A-Za-z0-9]*'
+    privatePropertyPattern: '(_)?[A-Za-z][_A-ZaZ0-9]*'
   PackageNaming:
     active: true
     aliases: ['PackageName']

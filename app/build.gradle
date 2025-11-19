@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -12,13 +14,12 @@ apply from: "$rootDir/config/detekt/detekt.gradle"
 
 android {
     namespace 'com.example.marvelapp'
-    compileSdkVersion 36
+    compileSdk = 36
 
     defaultConfig {
         applicationId "com.example.marvelapp"
-        minSdkVersion 23
-        //noinspection OldTargetApi
-        targetSdkVersion 34
+        minSdk = 23
+        targetSdk = 36
         versionCode 1
         versionName "1.0"
 
@@ -33,12 +34,18 @@ android {
     }
 
     buildFeatures {
-        viewBinding true
+        viewBinding = true
     }
 
     compileOptions {
-        sourceCompatibility = 21
-        targetCompatibility = 21
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_21
     }
 }
 
@@ -55,7 +62,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // Navigation
-    def nav_version = '2.9.5'
+    def nav_version = '2.9.6'
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
@@ -75,7 +82,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
     // OkHttp
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:5.2.1"))
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:5.3.2"))
     implementation("com.squareup.okhttp3:okhttp")
     implementation("com.squareup.okhttp3:logging-interceptor")
 
