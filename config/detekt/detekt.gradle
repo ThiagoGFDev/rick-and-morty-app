@@ -1,0 +1,18 @@
+apply plugin: "dev.detekt"
+
+project.afterEvaluate {
+    tasks.named("preBuild") {
+        dependsOn("detekt")
+    }
+}
+
+detekt {
+    toolVersion = "2.0.0-alpha.1"
+    def inputDirFiles = []
+    rootProject.subprojects.each { module ->
+        inputDirFiles << "$module.projectDir/src/main/java"
+    }
+    source.setFrom(files(inputDirFiles))
+    config.setFrom(file("$rootDir/config/detekt/detekt.yml"))
+    autoCorrect = true
+}
