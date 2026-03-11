@@ -13,11 +13,11 @@ plugins {
 apply from: "$rootDir/config/detekt/detekt.gradle"
 
 android {
-    namespace 'com.example.marvelapp'
+    namespace 'com.example.rickandmortyapp'
     compileSdk = 36
 
     defaultConfig {
-        applicationId "com.example.marvelapp"
+        applicationId "com.example.rickandmortyapp"
         minSdk = 23
         targetSdk = 36
         versionCode 1

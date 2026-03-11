@@ -17,6 +17,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "curso-android-marvel-app"
+rootProject.name = "curso-android-rickandmorty-app"
 include ':app'
 include ':core'
