@@ -18,12 +18,12 @@ apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 
 android {
     namespace 'com.example.rickandmortyapp'
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId "com.example.rickandmortyapp"
         minSdk = 23
-        targetSdk = 36
+        targetSdk = 37
         versionCode 1
         versionName "1.0"
 
@@ -60,31 +60,31 @@ dependencies {
     implementation project(':core')
 
     // AndroidX
-    implementation 'androidx.core:core-ktx:1.17.0'
-    implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.core:core-ktx:1.19.0'
+    implementation 'androidx.appcompat:appcompat:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.2'
 
     // Material design
-    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'com.google.android.material:material:1.14.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // Navigation
-    def nav_version = '2.9.7'
+    def nav_version = '2.9.8'
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     // ViewModel and LiveData
-    def lifecycle_version = "2.10.0"
+    def lifecycle_version = "2.11.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
 
-    def coroutines = "1.10.2"
+    def coroutines = "1.11.0"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
 
     // Dagger Hilt
-    def hilt_version = "2.59.2"
+    def hilt_version = "2.60.1"
     implementation "com.google.dagger:hilt-android:$hilt_version"
     ksp "com.google.dagger:hilt-compiler:$hilt_version"
 
@@ -95,22 +95,22 @@ dependencies {
     ksp "androidx.room:room-compiler:$room_version"
 
     // Paging3
-    def paging_version = "3.4.1"
+    def paging_version = "3.5.1"
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 
     // Glide
-    def glide_version = "5.0.5"
+    def glide_version = "5.0.9"
     implementation "com.github.bumptech.glide:glide:$glide_version"
     ksp "com.github.bumptech.glide:compiler:$glide_version"
 
     // Other Libs
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
-    implementation "androidx.datastore:datastore-preferences:1.2.0"
+    implementation "androidx.datastore:datastore-preferences:1.2.1"
 
     // Unit tests
     testImplementation 'junit:junit:4.13.2'
     testImplementation "androidx.arch.core:core-testing:2.2.0"
-    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0'
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
     testImplementation "androidx.room:room-testing:$room_version"
 
